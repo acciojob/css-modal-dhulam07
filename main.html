@@ -8,7 +8,38 @@
 
 <body>
 	<!-- the entire body must be written by student -->
+	<button id="openModal">Open Modal</button>
+
+<div class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Modal Header</h2>
+      <span class="close-modal">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p>Modal Body Content</p>
+    </div>
+  </div>
+</div>
     <script type="text/javascript" src="./script.js">
+
+		const openModalBtn = document.getElementById('openModal');
+  const modal = document.querySelector('.modal');
+  const closeModalBtn = document.querySelector('.close-modal');
+
+  openModalBtn.onclick = function() {
+    modal.style.display = 'block';
+  }
+
+  closeModalBtn.onclick = function() {
+    modal.style.display = 'none';
+  }
+
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
 </script>
 
 </body>
